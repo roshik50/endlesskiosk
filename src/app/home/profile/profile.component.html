@@ -1,0 +1,23 @@
+<div class="text-center">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="text-left">
+            <form #formData='ngForm' (ngSubmit)="updateProfile(formData)">
+                <input type="text" placeholder="Name.." (ngModel)="name" name="name" class="txt" required>
+                <input type="text" placeholder="Phone.." (ngModel)="phone" name="phone" class="txt" required>
+                <button type="submit" [disabled]="!formData.valid" class="basic-btn">Update Profile</button>
+            </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="text-left">
+          <form #changePwdForm="ngForm" (ngSubmit)="onChangePassword(changePwdForm)">
+              <input type="password" placeholder="Current Password.." (ngModel)="currentPwd" name="currentPwd" class="txt" required>
+              <input type="password" placeholder="New Password.." (ngModel)="newPwd" name="newPwd" class="txt" required>
+              <button class="basic-btn" [disabled]="!changePwdForm.valid" (click)="onChangepwd(changePwdForm)">
+                <i class="fas fa-redo-alt"></i>Change Password</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

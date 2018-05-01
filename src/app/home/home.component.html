@@ -1,0 +1,17 @@
+<div class="form-container" id="toolbar">
+    <header>
+      <div class="row">
+  
+          <div class="btn-group">
+          <button>
+            <strong *ngIf="currentUser.email">{{currentUser.email}}</strong>
+          </button>  
+              <button (click)="signOut()">Logout</button>
+        </div>
+      </div>
+    </header>
+    <div id="page">
+      <app-profile></app-profile>
+    </div>
+  
+  </div>
