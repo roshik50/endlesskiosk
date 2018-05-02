@@ -19,6 +19,7 @@ import { EmailComponent } from './email/email.component';
 import { ProfileComponent } from './home/profile/profile.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { HomeComponent } from './home/home.component';
+import { IndexComponent } from './index/index.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { HomeComponent } from './home/home.component';
     EmailComponent,
     ProfileComponent,
     ForgotpasswordComponent,
-    HomeComponent
+    HomeComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,

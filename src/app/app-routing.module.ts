@@ -6,9 +6,11 @@ import { SignupComponent } from './signup/signup.component';
 import { EmailComponent } from './email/email.component';
 import { ProfileComponent } from './home/profile/profile.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { IndexComponent } from './index/index.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'index', pathMatch: 'full' },
+  { path: 'index', component: IndexComponent },
   { path: 'login', component: LoginComponent },
   { path: 'login-email', component: EmailComponent },
   { path: 'signup', component: SignupComponent },

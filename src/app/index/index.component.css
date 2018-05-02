@@ -1,0 +1,83 @@
+#eaKiosk .eak-main-container{
+    background: #3a6186;
+    background: -webkit-gradient(linear,left top,right top,from(#89253e),to(#3a6186));
+    background: linear-gradient(90deg,#89253e,#3a6186);
+    border-radius: 0;
+  }
+  .eaKiosk-recalled-product-cta{
+    position: fixed;
+    top: 50%;
+    z-index: 99;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 4px;
+  }
+  md-tooltip.kiosktt{
+    font-size: 18px;
+  }
+  #eaKiosk .trending-products-section .media{
+    border-bottom: 1px solid #f4f4f4;
+    padding-bottom: 5px;
+  }
+  #eaKiosk .trending-products-section .media:last-child{
+     border-bottom: none;
+     padding-bottom: 0;
+  }
+  #eaKiosk .trending-products-section .box,
+  #eaKiosk .promotion-products-section .box,
+  #eaKiosk .product-recall-section .box{
+    box-shadow: 0 4px 3px rgba(0,0,0,.2);
+  }
+  #eaKiosk .trending-products-section .box .box-title,
+  #eaKiosk .promotion-products-section .box .box-title,
+  #eaKiosk .product-recall-section .box .box-title{
+    font-size: 24px;
+  }
+  #eaKiosk .trending-products-section .box.box-no-border,
+  #eaKiosk .promotion-products-section .box.box-no-border,
+  #eaKiosk .product-recall-section .box.box-no-border{
+    border: none;
+  }
+  #eaKiosk .trending-products-section .box,
+  #eaKiosk .promotion-products-section .box,
+  #eaKiosk .product-recall-section .box{
+    box-shadow: none;
+    background: none;
+  }
+  #eaKiosk .product-recall-section .media{
+    border: 1px solid #f4f4f4;
+    margin: 0 5px;
+    padding: 5px;
+    min-height: 88px;
+    background: #fff;
+  }
+  #eaKiosk .product-recall-section .slick-slider{
+    margin-bottom: 5px;
+  }
+  #eaKiosk .product-recall-section .product-box,
+  #eaKiosk .trending-products-section .product-box{
+    border-radius: 16px;
+  }
+  #eaKiosk .product-recall-section .product-box .product-imitation-recommendations,
+  #eaKiosk .trending-products-section .product-box .product-imitation-recommendations{
+    background: none;
+    border-radius: 16px;
+  }
+  #eaKiosk .product-recall-section .product-box .product-imitation-recommendations img,
+  #eaKiosk .trending-products-section .product-box .product-imitation-recommendations img{
+    display: inline;
+  }
+  #eaKiosk .trending-products-section .product-box .product-desc .product-name,
+  #eaKiosk .trending-products-section .product-box .product-desc .product-price,
+  #eaKiosk .trending-products-section .product-box .product-desc .stock-status{
+    font-size: 18px !important;
+  }
+  #eaKiosk .product-recall-section .slick-list{
+    margin: 0 40px;
+  }
+  #eaKiosk .trending-products-section{
+    margin-top: 40px;
+  }
+  #eaKiosk .trending-products-section .slick-list{
+    margin: 0 60px;
+  }
