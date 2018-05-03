@@ -20,6 +20,7 @@ import { ProfileComponent } from './home/profile/profile.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
+import { SlickModule } from 'ngx-slick';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { IndexComponent } from './index/index.component';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     BrowserAnimationsModule,    
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    SlickModule.forRoot()
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

@@ -1,3 +1,22 @@
-<p>
-    sdfjkd
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+            <div class="kiosk-box-header text-center">
+                    <h1 class="welcome-title">Welcome to ClickRetail</h1>
+                    <img src="assets/images/endless-aisle-kiosk-products/welcome-page-bg-2.jpg" width="100%" />
+                    <!-- <a href="#/connect/endless-aisle-kiosk/sign-in" class="btn btn-success btn-lg kiosk-main-cta-btn">
+                        <i class="fa fa-hand-o-up" aria-hidden="true"></i> Touch Here to Enter</a>  -->
+                </div>
+               
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+          <img src="{{ slide.img }}" alt="" width="100%">
+        </div>
+      </ngx-slick>
+    </div>
+  </div>
+</div>
