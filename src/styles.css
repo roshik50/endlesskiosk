@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css');
+html,
+body {
+  height: 100%
+}
 body {
     background:#E2E4E6;
     padding-top:0em;
@@ -8,12 +13,13 @@ body {
 }
 
 .form-container {
+    align-items: center;
     background:white;
     padding:3.5em;
     width:500px;
-    position:fixed;
-    left:50%;
-    margin-left:-250px;
+    /* position:fixed; */
+    /* left:50%; */
+    /* margin-left:-250px; */
     border: 1px solid #BBBBBB;
 }
 
@@ -21,7 +27,7 @@ body {
     background:white;
     padding:0em;
     width:100%;
-    position:fixed;
+    position:absolute;
     left:20%;
     /* margin-left:-250px; */
 }

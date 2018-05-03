@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <div class="text-left">
             <form #formData='ngForm' (ngSubmit)="updateProfile(formData)">
                 <input type="text" placeholder="Name.." (ngModel)="name" name="name" class="txt" required>
@@ -9,7 +9,7 @@
             </form>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-12">
         <div class="text-left">
           <form #changePwdForm="ngForm" (ngSubmit)="onChangePassword(changePwdForm)">
               <input type="password" placeholder="Current Password.." (ngModel)="currentPwd" name="currentPwd" class="txt" required>
