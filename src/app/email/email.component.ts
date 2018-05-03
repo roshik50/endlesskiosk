@@ -19,7 +19,7 @@ export class EmailComponent implements OnInit {
     if(formData.valid) {
       this.authService.emailSignin(formData.value.email,formData.value.password)
       .then(() => {
-            this.router.navigateByUrl('/home');
+            this.router.navigateByUrl('/profile');
           })
           .catch(error => {
             console.log('Something went wrong: ', error);
