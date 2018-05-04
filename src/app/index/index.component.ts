@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-index',
@@ -22,7 +22,7 @@ export class IndexComponent implements OnInit {
     
   ];
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
   }

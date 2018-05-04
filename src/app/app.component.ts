@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SharedataService } from "./services/sharedata.service";
 
 @Component({
   selector: 'app-root',
@@ -7,6 +6,5 @@ import { SharedataService } from "./services/sharedata.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  message:string;
   title = 'app';
 }

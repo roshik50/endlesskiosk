@@ -24,13 +24,13 @@
           <li>
             <a>
               <img src="assets/images/roshik.jpg" class="user-image" alt="User Image" width="30px">
-              <span class="hidden-xs">Joana Geimer</span>
+              <span class="hidden-xs">{{message}}</span>
             </a>
           </li>
         </ul>
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav" *ngIf="message">
           <li>
-            <a>
+            <a (click)="signOut()">
               <i class="fas fa-sign-out-alt fa-lg"></i>
               <span class="hidden-xs">Logout</span>
             </a>
