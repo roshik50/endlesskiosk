@@ -7,8 +7,9 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { ToastrModule } from 'ngx-toastr';
-
 import {AuthService} from './services/auth.service';
+import { SharedataService } from "./services/sharedata.service";
+
 
 import { environment } from '../environments/environment';
 
@@ -45,7 +46,7 @@ import { SlickModule } from 'ngx-slick';
     ToastrModule.forRoot(),
     SlickModule.forRoot()
   ],
-  providers: [AuthService],
+  providers: [AuthService,SharedataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

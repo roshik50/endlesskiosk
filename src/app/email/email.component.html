@@ -4,8 +4,6 @@
       <a routerLink="/login" id="goback">Go back</a>
       <h2>Custom Login</h2>
 
-      <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
-
       <form #formData='ngForm' (ngSubmit)="onSignin(formData)">
 
         <input type="text" placeholder="Email address.." (ngModel)="email" name="email" class="txt" required>
