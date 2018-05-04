@@ -22,6 +22,8 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
 import { SlickModule } from 'ngx-slick';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { SlickModule } from 'ngx-slick';
     ProfileComponent,
     ForgotpasswordComponent,
     HomeComponent,
-    IndexComponent
+    IndexComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

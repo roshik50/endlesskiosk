@@ -1,58 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="template-container" id="toolbar">
-  <header>
-    <div class="container">
-      <div class="row right float-right">
-        <ul class="nav navbar-nav">
-          <li class="dropdown notifications-menu open">
-            <a aria-expanded="true">
-              <span class="label label-warning">1</span>
-              <i class="fas fa-heart"></i>
-              <span class="hidden-xs">Wishlist</span>
-            </a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav">
-          <li class="dropdown notifications-menu open">
-            <a aria-expanded="true">
-              <span class="label label-success">1</span>
-              <i class="fas fa-shopping-cart fa-lg"></i>
-              <span class="hidden-xs">Cart</span>
-            </a>
-          </li>
-        </ul>
+   <!-- header -->
+   <app-header></app-header>
 
-        <ul class="nav navbar-nav">
-          <li>
-            <a>
-              <img src="assets/images/roshik.jpg" class="user-image" alt="User Image" width="30px">
-              <span class="hidden-xs">Joana Geimer</span>
-            </a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav">
-          <li>
-            <a>
-              <i class="fas fa-sign-out-alt fa-lg"></i>
-              <span class="hidden-xs">Logout</span>
-            </a>
-          </li>
-        </ul>
-
-      </div>
-    </div>
-  </header>
+   <!-- body -->
   <div id="page">
     <router-outlet></router-outlet>
   </div>
-  <!-- <footer>
-      
-  </footer> -->
-  <footer>
-    <div class="test-center hidden-xs">
-      <strong class="test-center"> Copyright © 2018 Applexus Technologies.</strong> All rights reserved.
-    </div>
-  </footer>
+
+  <!--footer-->
+    <app-footer></app-footer>
 
 </div>
 
