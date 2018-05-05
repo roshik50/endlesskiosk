@@ -5,10 +5,10 @@
 
       <span class="error" *ngIf="error">{{ error }}</span>
 
-      <button (click)="loginFacebook()" id="fb">Login With Facebook</button>
+      <button (click)="loginFacebook()" id="fb" class="btn btn-primary btn-lg">Login With Facebook</button>
       <br>
-      <button (click)="loginGoogle()" id="google">Login With Google</button>
-      <button routerLink="/login-email" id="email">Email</button>
+      <button (click)="loginGoogle()" id="google" class="btn btn-primary btn-lg"> Login With Google</button>
+      <button routerLink="/login-email" id="email" class="btn btn-primary btn-lg">Email</button>
 
       <a routerLink="/signup" routerLinkActive="active" class="alc">No account?
         <strong>Create one here</strong>

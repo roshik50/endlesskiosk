@@ -18,7 +18,7 @@
 }
 
 #email {
-    background: #ECECEC  url('assets/images/email.svg') no-repeat 25px;
+    background: rgb(12, 156, 161)  url('assets/images/email.svg') no-repeat 25px;
     background-size: 25px;
 }
 

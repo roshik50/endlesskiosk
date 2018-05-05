@@ -8,7 +8,11 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { ToastrModule } from 'ngx-toastr';
 import {AuthService} from './services/auth.service';
+import {ProductService} from './services/product.service';
+import {CartService} from './services/cart.service';
+import {WishlistService} from './services/wishlist.service';
 import { SharedataService } from "./services/sharedata.service";
+import { CategoryService } from "./services/category.service";
 
 
 import { environment } from '../environments/environment';
@@ -50,7 +54,7 @@ import { FooterComponent } from './footer/footer.component';
     ToastrModule.forRoot(),
     SlickModule.forRoot()
   ],
-  providers: [AuthService,SharedataService],
+  providers: [AuthService,SharedataService,ProductService,CartService,WishlistService,CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

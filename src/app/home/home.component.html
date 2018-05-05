@@ -1,1 +1,19 @@
-home page
+<div class="container">
+        <div class="row bottom-margin-20">
+                <div class="col-md-12">
+                  <div class="text-center">
+                    <h1 class="welcome-title">Welcome to Applexus ClickRetail</h1>
+                  </div>
+                </div>
+              </div>
+        <div class="row">
+                <div class="col-md-12">
+                      <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+                        <div ngxSlickItem *ngFor="let category of catgeoryList" class="slide">
+                          <!-- <img src="{{ slide.img }}" alt="" width="100%"> -->
+                          <button class="btn btn-primary btn-lg basic-btn">{{category.name}}</button>
+                        </div>
+                      </ngx-slick>
+                    </div>
+      </div>
+</div>
