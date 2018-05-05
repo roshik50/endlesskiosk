@@ -24,11 +24,11 @@
           <li>
             <a>
               <img src="assets/images/roshik.jpg" class="user-image" alt="User Image" width="30px">
-              <span class="hidden-xs">{{message}}</span>
+              <span class="hidden-xs">{{authService.currentUser.email}}</span>
             </a>
           </li>
         </ul>
-        <ul class="nav navbar-nav" *ngIf="message">
+        <ul class="nav navbar-nav" *ngIf="authService.currentUser()">
           <li>
             <a (click)="signOut()">
               <i class="fas fa-sign-out-alt fa-lg"></i>
