@@ -1,42 +1,54 @@
 <header>
     <div class="container">
-      <div class="row right float-right">
+      <div class="row float-right">
         <ul class="nav navbar-nav">
-          <li class="dropdown notifications-menu open">
-            <a aria-expanded="true">
-              <span class="label label-warning">1</span>
-              <i class="fas fa-heart"></i>
-              <span class="hidden-xs">Wishlist</span>
-            </a>
+          <li class="nav-item" *ngIf="authService.currentUser()">
+                  <a class="nav-link" routerLink="/mywishlist">
+                      <i class="fas fa-heart"></i>My Wishlist
+                      <span class="badge badge-primary badge-pill">1</span>
+                  </a>
           </li>
-        </ul>
+          </ul>
+          <ul class="nav navbar-nav">
+            <li class="nav-item" *ngIf="authService.currentUser()">
+                <a class="nav-link" routerLink="/mycart">
+                    <i class="fa fa-shopping-cart"></i>My Cart
+                    <span class="badge badge-primary badge-pill">1</span>
+                </a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav">
+          <li class="nav-item dropdown" *ngIf="authService.currentUser()">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#!" role="button" aria-haspopup="true" aria-expanded="false">
+                  <img src="assets/images/roshik.jpg" class="user-image" alt="User Image" width="30px">
+                  <span class="hidden-xs">{{authService.currentUser().email}}</span>
+              </a>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" routerLink="/manage">
+                    <span style="color: #3B8598"> <i class="fa fa-dashboard"></i> Profile</span>
+                  </a>
+                  <a class="dropdown-item" (click)="signOut()" *ngIf="authService.currentUser()">
+                      <span style="color: #3B8598"> <i class="fa fa-user-times"></i> Sign Out</span>
+                  </a>
+              </div>
+          </li>
+          </ul>
         <ul class="nav navbar-nav">
-          <li class="dropdown notifications-menu open">
-            <a aria-expanded="true">
-              <span class="label label-success">1</span>
-              <i class="fas fa-shopping-cart fa-lg"></i>
-              <span class="hidden-xs">Cart</span>
+        <li class="nav-item dropdown" *ngIf="!authService.currentUser()">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#!" role="button" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-bars"></i> 
+                Session
             </a>
-          </li>
-        </ul>
-
-        <ul class="nav navbar-nav">
-          <li>
-            <a>
-              <img src="assets/images/roshik.jpg" class="user-image" alt="User Image" width="30px">
-              <span class="hidden-xs">{{authService.currentUser.email}}</span>
-            </a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav" *ngIf="authService.currentUser()">
-          <li>
-            <a (click)="signOut()">
-              <i class="fas fa-sign-out-alt fa-lg"></i>
-              <span class="hidden-xs">Logout</span>
-            </a>
-          </li>
-        </ul>
-
+            <div class="dropdown-menu">
+                <a class="dropdown-item" routerLink="/login" *ngIf="!authService.currentUser()">
+                  <span style="color: #3B8598"> <i class="fa fa-user"></i> Login</span> 
+                </a>
+                <a class="dropdown-item" routerLink="/signup" *ngIf="!authService.currentUser()">
+                  <span style="color: #3B8598"> <i class="fa fa-user-plus"></i> SignUp</span>
+                </a>
+            </div>
+        </li>
+       </ul>
       </div>
     </div>
   </header>

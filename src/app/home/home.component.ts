@@ -14,12 +14,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     console.log("saoifdsofid");
-    if (this.authService.currentUser())
+    if (!this.authService.currentUser())
       {
-      this.currentUser = this.authService.currentUser();
-      this.dataSendToHeader(this.currentUser.email);
-      }
-      else{
        this.signOut();
       }
   }

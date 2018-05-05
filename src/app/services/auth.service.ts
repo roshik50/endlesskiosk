@@ -55,7 +55,6 @@ export class AuthService {
   currentUser() {
     var user = firebase.auth().currentUser;
     var currentUser = null;
-    console.log("Current user data"+JSON.stringify(user));
 
     if (user != null) {
       currentUser = {

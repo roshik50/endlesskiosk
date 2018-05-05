@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedataService } from "../services/sharedata.service";
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -12,15 +11,15 @@ import { ToastrService } from 'ngx-toastr';
 export class HeaderComponent implements OnInit {
   message:string;
 
-  constructor(private authService: AuthService, private router: Router, private tostr: ToastrService,private data: SharedataService) { }
+  constructor(private authService: AuthService, private router: Router, private tostr: ToastrService) { }
   ngOnInit() {
    //this.data.currentMessage.subscribe(message => this.message = message)
+   //console.log("Current user data"+this.authService.currentUser().email);
   }
 
   signOut() {
     console.log("logout");
     this.authService.logout().then(() => {
-      this.data.changeMessage("");
       this.tostr.success('', 'User Logout Successfully');
       this.router.navigateByUrl('/index');
     })
