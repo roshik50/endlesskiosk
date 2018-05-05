@@ -13,9 +13,9 @@ export class HeaderComponent implements OnInit {
   message:string;
 
   constructor(public authService: AuthService, private router: Router, private tostr: ToastrService,private data: SharedataService) { }
-
   ngOnInit() {
-    this.data.currentMessage.subscribe(message => this.message = message)
+   this.data.currentMessage.subscribe(message => this.message = message)
+
   }
 
   signOut() {

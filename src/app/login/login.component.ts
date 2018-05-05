@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     this.authService.googleLogin().then(value => {
           console.log('Sucess', value),
             console.log('The given name is ' + value.additionalUserInfo.profile.given_name),
-            this.router.navigateByUrl('/profile');
+            this.router.navigateByUrl('/home');
         })
         .catch(error => {
           console.log('Something went wrong: ', error);

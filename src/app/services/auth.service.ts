@@ -55,6 +55,7 @@ export class AuthService {
   currentUser() {
     var user = firebase.auth().currentUser;
     var currentUser = null;
+    console.log("Current user data"+JSON.stringify(user));
 
     if (user != null) {
       currentUser = {
@@ -63,6 +64,8 @@ export class AuthService {
         photoUrl: user.photoURL,
         emailVerified: user.emailVerified,
         uid: user.uid,
+        phoneNumber:user.phoneNumber
+       // loginStatus:user.lo
         // The user's ID, unique to the Firebase project. Do NOT use
         // this value to authenticate with your backend server, if
         // you have one. Use User.getToken() instead.
