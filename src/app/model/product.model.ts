@@ -1,6 +1,11 @@
 export class Product {
-    constructor (public id: number,
-        public name: string,
-        public price: number,
-        public description: string) {}
+        public $key: string;
+        public name: string;
+        public price: number;
+        public description: string;
+        public quantity: string;
+        public images:string[];
+        public isRecalled:boolean;
+        public rating:number;
+        public category:string;
 }
