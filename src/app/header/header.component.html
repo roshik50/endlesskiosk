@@ -24,10 +24,10 @@
                   <span class="hidden-xs">{{authService.currentUser().email}}</span>
               </a>
               <div class="dropdown-menu">
-                  <a class="dropdown-item" routerLink="/manage">
+                  <a class="dropdown-item" routerLink="/profile">
                     <span style="color: #3B8598"> <i class="fa fa-dashboard"></i> Profile</span>
                   </a>
-                  <a class="dropdown-item" (click)="signOut()" *ngIf="authService.currentUser()">
+                  <a class="dropdown-item" (click)="signOut()">
                       <span style="color: #3B8598"> <i class="fa fa-user-times"></i> Sign Out</span>
                   </a>
               </div>
