@@ -26,28 +26,36 @@ export class HomeComponent implements OnInit {
     
   ];
   currentUser: any;
-  constructor(public authService: AuthService, private router: Router, private tostr: ToastrService,public catgyService: CategoryService) { }
+  message:string;
+  constructor(public authService: AuthService, private router: Router, private tostr: ToastrService,public catgyService: CategoryService,private data:SharedataService) { }
 
   ngOnInit() {
     console.log("saoifdsofid");
-    if (!this.authService.currentUser())
+    if (this.authService.currentUser())
       {
-       this.signOut();
+        this. dataSendToHeader(this.authService.currentUser().name);
+      //  this.data.currentMessage.subscribe(message => this.message = message);
+        let x = this.catgyService.getData();
+        x.snapshotChanges().subscribe(item => {
+          this.catgeoryList = [];
+          item.forEach(element => {
+            var y = element.payload.toJSON();
+            y["$key"] = element.key;
+            this.catgeoryList.push(y as Category);
+          }
+    
+          );
+        });
+       
       }
-      let x = this.catgyService.getData();
-      x.snapshotChanges().subscribe(item => {
-        this.catgeoryList = [];
-        item.forEach(element => {
-          var y = element.payload.toJSON();
-          y["$key"] = element.key;
-          this.catgeoryList.push(y as Category);
-        }
-  
-        );
-      });
+      else
+      {
+        this.signOut();
+      }
+ 
   }
 
-  slideConfig = {"slidesToShow": 5, "slidesToScroll": 4};
+  slideConfig = {"slidesToShow": 4, "slidesToScroll": 3};
 
   signOut() {
     console.log("logout");
@@ -61,9 +69,10 @@ export class HomeComponent implements OnInit {
       });;
   }
 
-  // dataSendToHeader(email) {
-  //   this.data.changeMessage(email);
-  // }
+  dataSendToHeader(name) {
+   this.data.changeMessage(name);
+ }
+ 
   
 
 
