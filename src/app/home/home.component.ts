@@ -88,14 +88,16 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  addToCart(product)
+  addToCart(product:Product)
   {
      this.cartItem=new Cart();
+     this.cartItem.productId=product.$key;               
      this.cartItem.name=product.name;
      this.cartItem.price=product.price;
+     this.cartItem.productImageUrl=product.images[0];
      this.cartItem.quantity=1;
      this.cartService.addToCart(this.cartItem);
-     console.log( this.cartService.getCartLength());
+     console.log( this.cartService.getCartItems().length);
   }
 
 

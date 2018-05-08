@@ -28,6 +28,8 @@ import { IndexComponent } from './index/index.component';
 import { SlickModule } from 'ngx-slick';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { CartComponent } from './cart/cart.component';
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     IndexComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CartComponent,
+    ProductdetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { EmailComponent } from './email/email.component';
 import { ProfileComponent } from './home/profile/profile.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { IndexComponent } from './index/index.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'forgotpassword', component: ForgotpasswordComponent }
+  { path: 'forgotpassword', component: ForgotpasswordComponent },
+  { path: 'mycart', component: CartComponent }
 ];
 
 @NgModule({

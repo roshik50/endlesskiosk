@@ -1,0 +1,150 @@
+<div class="container">
+    <div class="row bottom-margin-20">
+        <div class="col-md-12">
+          <div class="text-center">
+            <h1 class="welcome-title">Cart View</h1>
+          </div>
+        </div>
+      </div>
+  <div class="row">
+    <div class="col-md-9">
+      <div class="ibox">
+        <div class="ibox-title">
+          <span class="pull-right">(
+            <strong>{{ cartItems.length}}</strong>) items</span>
+          <h5>
+            <strong class="kiosk-medium-font">Items in cart</strong>
+          </h5>
+        </div>
+        <div class="ibox-content" *ngIf="cartItems.length<=0">
+          <div class="callout callout-info">
+            <h2>
+              <strong class="kiosk-larger-font"> Cart is Empty.....!</strong>
+            </h2>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <div class="table-responsive">
+            <table class="table shoping-cart-table" *ngIf="cartItems.length">
+              <thead>
+                <tr>
+                  <th colspan="2" class="kiosk-medium-font">Product</th>
+                  <th class="kiosk-medium-font">Price</th>
+                  <th class="kiosk-medium-font">Quantity</th>
+                  <th>
+                    <span class="pull-right kiosk-medium-font">Total Price</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let product of cartItems">
+                <tr>
+                  <td width="90px">
+                    <a style="cursor: pointer;">
+                      <img src="{{ product.productImageUrl }}" alt="{{ product.name }}" class="product-image-tn-md" />
+                    </a>
+                  </td>
+                  <td width="40%">
+                    <h3>
+                      <a class="text-navy">
+                        {{ product.name }}
+                      </a>
+                    </h3>
+                    <p class="small kiosk-smaller-font">Product ID: {{ product.productId }}</p>
+                    <div class="m-t-sm">
+                      <!-- <a ng-click="giftpack()" class="text-muted gift-pack-toggle-btn">
+                        <i class="fa fa-gift"></i>
+                        <span class="kiosk-smaller-font">Add gift package</span>
+                        <toggle-switch ng-model="$root.globals.typeaheadOptions.showHint" on-label="Yes" off-label="No"></toggle-switch>
+                      </a> 
+                      |-->
+                      <a (click)="removeItem($index)" class="text-muted" style="cursor:pointer;">
+                        <i class="fa fa-trash color-danger"></i>
+                        <span class="kiosk-smaller-font">Remove item</span>
+                      </a>
+                    </div>
+                  </td>
+
+                  <td width="150px">
+                    <span class="pull-left kiosk-medium-font">{{ product.price | currency }}</span>
+                    <!--<s class="small text-muted">$230,00</s>-->
+                  </td>
+                  <td width="65">
+                    <input type="number" class="form-control" placeholder="1" [(ngModel)]="product.quantity">
+                  </td>
+                  <td width="150px">
+                    <h4 class="pull-right">
+                      <strong class="kiosk-medium-font">{{  product.price*product.quantity | currency }}</strong>
+                    </h4>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="col-md-3">
+      <div class="ibox" *ngIf="cartItems.length">
+        <div class="ibox-title">
+          <h5>
+            <span class="kiosk-larger-font">Cart Summary</span>
+          </h5>
+        </div>
+        <div class="ibox-content ">
+          <table class="table">
+            <tr>
+              <td class="text-left tbl-vertical-align-middle kiosk-medium-font">SubTotal</td>
+              <td class="text-right tbl-vertical-align-middle">
+                <h4 class="font-bold">
+                  {{ cartService.cartValue() | currency }}
+                </h4>
+              </td>
+
+            </tr>
+            <tr>
+              <td class="text-left tbl-vertical-align-middle kiosk-medium-font">Discount</td>
+              <td class="text-right tbl-vertical-align-middle">
+                <h4 class="font-bold">
+                  {{ 0 | currency }}
+                </h4>
+              </td>
+            </tr>
+            <tr class="grand-total">
+              <td class="text-left tbl-vertical-align-middle kiosk-medium-font">Order Total</td>
+              <td class="text-right tbl-vertical-align-middle">
+                <h2 class="font-bold">
+                  {{  cartService.cartValue() | currency }}
+                </h2>
+              </td>
+            </tr>
+          </table>
+          <div class="m-t-sm top-margin-10">
+            <div *ngIf="cartItems.length > 0">
+              <button class="btn btn-primary basic-btn btn-block">
+                <i class="fa fa fa-shopping-cart kiosk-medium-font"></i> Proceed to Checkout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ibox">
+        <div class="ibox-title">
+          <a ng-click="helpMe()">
+            <img src="assets\images\endless-aisle-kiosk-products\askmeicanhelp.jpg" alt="help me" class="cart-help-me-image-md" />
+          </a>
+          <h5 class="kiosk-medium-font">
+            <strong>Support</strong>
+          </h5>
+        </div>
+        <div class="ibox-content text-center">
+          <h3>
+            <i class="fa fa-phone"></i> +1 425 783 2345</h3>
+          <span class="small">Please contact with us if you have any questions.</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
