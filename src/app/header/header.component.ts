@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -11,10 +12,11 @@ import { ToastrService } from 'ngx-toastr';
 export class HeaderComponent implements OnInit {
   message:string;
 
-  constructor(private authService: AuthService, private router: Router, private tostr: ToastrService) { }
+  constructor(private authService: AuthService, private router: Router, private tostr: ToastrService,private cartService: CartService) { }
   ngOnInit() {
    //this.data.currentMessage.subscribe(message => this.message = message)
    //console.log("Current user data"+this.authService.currentUser().email);
+ 
   }
 
   signOut() {

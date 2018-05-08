@@ -6,6 +6,7 @@ export class Product {
         public quantity: string;
         public images:string[];
         public isRecalled:boolean;
+        public isTrended:boolean;
         public rating:number;
-        public category:string;
+        public categories:string[];
 }

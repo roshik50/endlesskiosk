@@ -1,12 +1,55 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { firestore } from 'firebase/app';
+import { Cart } from '../model/cart.model';
 
 @Injectable()
 export class CartService {
 
+  private cartItems: Cart[] = [];
+
   constructor(private firebase: AngularFireDatabase) {
 
+  }
+  addToCart(item: Cart) {
+    let itemExist = false;
+    this.cartItems.forEach(element => {
+      if (element.name === item.name) {
+        console.log("element.name="+element.name+" item.name="+item.name);
+        element.quantity++;
+        itemExist = true;
+        return;
+      }
+    });
+   
+    if (!itemExist) {
+      console.log("get in push operation"+itemExist)
+      this.cartItems.push(item);
+    }
+  }
+
+  removeFromCart(index) {
+    this.cartItems.splice(index, 1);
+  }
+
+  getCartItems() {
+    return this.cartItems;
+  }
+
+  cartValue() {
+    let price = 0;
+    this.cartItems.forEach(element => {
+      price += element.quantity * element.price;
+    });
+    return price;
+  }
+
+  getCartLength() {
+    let length = 0;
+    this.cartItems.forEach(element => {
+      length += element.quantity;
+    });
+    return length;
   }
 
   // {
@@ -31,33 +74,33 @@ export class CartService {
 
 
   // }
-  inside() {
-    //define root reference
-    const rootRef = this.firebase.database.ref();
+  // inside() {
+  //   //define root reference
+  //   const rootRef = this.firebase.database.ref();
 
-    // Select a user by UID
-    const oneRef = rootRef.child('users').child('1');
+  //   // Select a user by UID
+  //   const oneRef = rootRef.child('users').child('1');
 
-    // Find a user by email address
-    const twoRef = rootRef.child('users').orderByChild('email').equalTo('roshik50@gmail.com');
+  //   // Find a user by email address
+  //   const twoRef = rootRef.child('users').orderByChild('email').equalTo('roshik50@gmail.com');
 
-    //Limit to 10 users
-    const threeRef = rootRef.child('users').limitToFirst(10);
+  //   //Limit to 10 users
+  //   const threeRef = rootRef.child('users').limitToFirst(10);
 
-    //get all users names that starts with 'D' 
-    const fourRef = rootRef.child('users').orderByChild('name').startAt('D').endAt('D\uf8ff');
+  //   //get all users names that starts with 'D' 
+  //   const fourRef = rootRef.child('users').orderByChild('name').startAt('D').endAt('D\uf8ff');
 
-    //get all users whos age are less than 50
-    const fiveRef = rootRef.child('users').orderByChild('age').endAt(49);
+  //   //get all users whos age are less than 50
+  //   const fiveRef = rootRef.child('users').orderByChild('age').endAt(49);
 
-    //get all users whos age are greater than 50
-    const sixRef = rootRef.child('users').orderByChild('age').startAt(51);
+  //   //get all users whos age are greater than 50
+  //   const sixRef = rootRef.child('users').orderByChild('age').startAt(51);
 
-    //get all users whos age are between 20 and 100
-    const sevenRef = rootRef.child('users').orderByChild('age').startAt(20).endAt(100);
-    // get all users whos age is 50 and whos location SF
-    const nineRef = rootRef.child('users').orderByChild('age_location').equalTo('99_SF');
-  }
+  //   //get all users whos age are between 20 and 100
+  //   const sevenRef = rootRef.child('users').orderByChild('age').startAt(20).endAt(100);
+  //   // get all users whos age is 50 and whos location SF
+  //   const nineRef = rootRef.child('users').orderByChild('age_location').equalTo('99_SF');
+  // }
 
 
   // {
@@ -91,20 +134,20 @@ export class CartService {
   //           }
   // }
 
-  joininfirebase() {
-    const eventKey = "fm";
-    const rootRef = this.firebase.database.ref();
-    const attendeeRef = rootRef.child('eventAttendees');
-    const usersRef = rootRef.child('users');
+  // joininfirebase() {
+  //   const eventKey = "fm";
+  //   const rootRef = this.firebase.database.ref();
+  //   const attendeeRef = rootRef.child('eventAttendees');
+  //   const usersRef = rootRef.child('users');
 
-    function getUsersAtEvents(key, cb) {
-      attendeeRef.child(key).on('child_added', snap => {
-        let userRef = usersRef.child(snap.key);
-        usersRef.once('value', cb)
-      });
-    }
-    getUsersAtEvents(eventKey, snap => console.log(snap.val()));
-  }
+  //   function getUsersAtEvents(key, cb) {
+  //     attendeeRef.child(key).on('child_added', snap => {
+  //       let userRef = usersRef.child(snap.key);
+  //       usersRef.once('value', cb)
+  //     });
+  //   }
+  //   getUsersAtEvents(eventKey, snap => console.log(snap.val()));
+  // }
 
 
 }

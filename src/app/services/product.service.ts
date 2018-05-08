@@ -12,7 +12,7 @@ export class ProductService {
     this.productList = this.firebase.list('products');
     return this.productList;
   }
-  insertCategory(product: Product) {
+  insertProduct(product: Product) {
     this.productList.push(
       {
         name: product.name,
@@ -22,11 +22,12 @@ export class ProductService {
         images: product.images,
         isRecalled: product.isRecalled,
         rating: product.rating,
-        category: product.category
+        categories: product.categories,
+        isTrended: product.isTrended
       }
     );
   }
-  updateCategory(product: Product) {
+  updateProduct(product: Product) {
     this.productList.update(product.$key,
       {
         name: product.name,
@@ -36,11 +37,12 @@ export class ProductService {
         images: product.images,
         isRecalled: product.isRecalled,
         rating: product.rating,
-        category: product.category
+        category: product.categories,
+        isTrended: product.isTrended
       }
     );
   }
-  deleteCategory(key: string) {
+  deleteProduct(key: string) {
     console.log("key value ++" + key);
     this.productList.remove(key);
   }

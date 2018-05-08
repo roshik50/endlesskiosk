@@ -1,5 +1,11 @@
+import { Cart } from "./cart.model";
+
 export class User {
-    constructor(public uid:string,public name:string,public email:string,
-        public photoUrl:string,cartItemCount:number,wishListItemCount:number){}
+    public uid:string;
+    public name:string;
+    public email:string;
+    public photoUrl:string;
+    public cartItems:Cart[];
+    public wishListItemCount:number;
         
 }

@@ -13,7 +13,7 @@
             <li class="nav-item" *ngIf="authService.currentUser()">
                 <a class="nav-link" routerLink="/mycart">
                     <i class="fa fa-shopping-cart"></i>My Cart
-                    <span class="badge badge-primary badge-pill">1</span>
+                    <span class="badge badge-primary badge-pill">{{cartService.getCartLength()}}</span>
                 </a>
             </li>
           </ul>

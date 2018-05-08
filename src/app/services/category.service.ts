@@ -37,6 +37,6 @@ export class CategoryService {
     console.log("key value ++"+key);
     this.categoryList.remove(key);
   }
-
+ 
 
 }
