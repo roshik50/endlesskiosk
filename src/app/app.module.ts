@@ -30,6 +30,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { ProductdetailsComponent } from './productdetails/productdetails.compone
     HeaderComponent,
     FooterComponent,
     CartComponent,
-    ProductdetailsComponent
+    ProductdetailsComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,

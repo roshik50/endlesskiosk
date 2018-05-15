@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Product } from '../model/product.model';
 
 @Injectable()
 export class SharedataService {
 
-  private messageSource = new BehaviorSubject<string>("");
-  currentMessage = this.messageSource.asObservable();
+  private dataSource = new BehaviorSubject<any>(new Product());
+  currentData = this.dataSource.asObservable();
 
   constructor() { }
 
-  changeMessage(message: string) {
-    this.messageSource.next(message)
+  changeData(data: any) {
+    this.dataSource.next(data)
   }
 
 

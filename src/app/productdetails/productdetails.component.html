@@ -1,0 +1,122 @@
+<div class="container">
+    <div class="row bottom-margin-20">
+        <div class="col-md-12">
+          <div class="text-center">
+            <h1 class="welcome-title">{{productDetails.name}}</h1>
+          </div>
+        </div>
+      </div>
+  <div class="box box-solid">
+    <div class="row bottom-margin-10">
+      <div class="col-lg-12 margin-bottom">
+        <div id="">
+          <div class="row">
+            <div class="col-md-5 product-details-hero-image-section">
+              <div class="product-hero-image-preview">
+                <img src="{{productDetails.images[0]}}" class="product-details-image" width="100%" />
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+                    <div ngxSlickItem *ngFor="let image of productDetails.images" class="slide">
+                      <img src="{{image}}" alt="" width="100%">
+                    </div>
+                  </ngx-slick>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7 product-details-summary-section">
+              <!-- <h2 class="font-bold m-b-xs">
+                                            Topstiched Leather Belt
+                                        </h2> -->
+              <!-- <small>SKU: {{productDetails.SKU}}</small> -->
+              <div class="pull-right">
+                <span class="text-muted pull-right" *ngIf="productDetails.quantity > 0">
+                  <span class="text-green stock-status">In Stock</span>
+                </span>
+                <span class="text-muted pull-right" *ngIf="productDetails.quantity <= 0">
+                  <span class="text-red stock-status">Out of Stock</span>
+                </span>
+                <br/>
+                <small>
+                  <div class="pull-right">
+                    <span class="no-padding-read">
+                      <span class="label-xs">Rating {{ productDetails.rating }} out of 5 stars</span>
+                    </span>
+                  </div>
+                </small>
+              </div>
+              <div class="m-t-md">
+                <h2 class="product-main-price margin-bottom">{{ productDetails.price | currency }}</h2>
+              </div>
+              <div class="form-inline">
+                <div class="form-group custom-input">
+                 <select class="form-control select2 qty-select" [(ngModel)]="selectedQuantity">
+                              <option *ngFor="let quantity of productQuantity" value="{{quantity}}">{{quantity}}</option>
+                  </select>
+                </div>
+                <button class="btn btn-primary btn-lg basic-btn" (click)="addToCart(productDetails)">
+                  <i class="fa fa-cart-plus">&nbsp;</i> Add to Cart</button>
+              </div>
+              <hr>
+              <div class="product-description-section margin-bottom">
+                <h3>Product description</h3>
+                <div class="text-muted product-description">
+                  {{ productDetails.description }}
+                </div>
+              </div>
+              <br>
+              <div class="margin-bottom">
+                <button class="btn btn-primary btn-lg basic-btn" (click)="addToWishlist(productDetails)">
+                  <i class="fa fa-star"></i> Add to Wishlist </button>
+                <!-- <label class="form-label">Share:</label> -->
+                <div class="btn-group margin-r-5 social-share-btn">
+                  <button class="btn btn-white" (click)="share(selectedProduct)">
+                    <i class="fa fa-mobile fa-lg"></i>
+                  </button>
+                  <button class="btn btn-white" (click)="share(selectedProduct)">
+                    <i class="fa fa-envelope-o"></i>
+                  </button>
+                  <button class="btn btn-white" (click)="share(selectedProduct)">
+                    <i class="fa fa-twitter"></i>
+                  </button>
+                  <button class="btn btn-white" (click)="share(selectedProduct)">
+                    <i class="fa fa-facebook-square"></i>
+                  </button>
+                  <button class="btn btn-white" (click)="share(selectedProduct)">
+                    <i class="fa fa-pinterest-p"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="no-padding col-md-4">
+                <div class="panel panel-default">
+                  <div class="panel-body location-info">
+                    <h4 class="no-top-margin">
+                      <i class="fa fa-location-arrow" aria-hidden="true"></i> Location Information: </h4>
+                    <h3 class="margin margin-bottom-none">A-03:12</h3>
+                    <a (click)="viewInMap()" class="pull-right">View in Map</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="ibox float-e-margins related-product-section">
+          <div class="ibox-title bg-gray-light">
+            <h4>
+              <strong>Related Products</strong>
+            </h4>
+            <div ibox-tools-min></div>
+          </div>
+          <div class="ibox-content">
+            <div class="row">
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>

@@ -8,6 +8,8 @@ import { ProfileComponent } from './home/profile/profile.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { IndexComponent } from './index/index.component';
 import { CartComponent } from './cart/cart.component';
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -18,7 +20,10 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'forgotpassword', component: ForgotpasswordComponent },
-  { path: 'mycart', component: CartComponent }
+  { path: 'mycart', component: CartComponent },
+  { path: 'productdetails', component: ProductdetailsComponent },
+  { path: 'mywishlist', component: WishlistComponent },
+  { path: '**', component: IndexComponent },
 ];
 
 @NgModule({

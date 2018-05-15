@@ -25,8 +25,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     if (this.authService.currentUser()) {
-      this.dataSendToHeader(this.authService.currentUser().name);
-      //  this.data.currentMessage.subscribe(message => this.message = message);
       let categorysData = this.catgyService.getData();
       categorysData.snapshotChanges().subscribe(item => {
         this.categoryList = [];
@@ -71,15 +69,11 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  dataSendToHeader(name) {
-    this.data.changeMessage(name);
-  }
 
   getSelectedCategory(categoryId) {
     this.selectedCategoryProductList=[];
     this.productList.forEach(element => {
       for (let category in element.categories) {
-        console.log("sdlfl+++"+category);
         if (category === categoryId) {
           this.selectedCategoryProductList.push(element);
           break;
@@ -98,6 +92,12 @@ export class HomeComponent implements OnInit {
      this.cartItem.quantity=1;
      this.cartService.addToCart(this.cartItem);
      console.log( this.cartService.getCartItems().length);
+  }
+
+  selectedProduct(product)
+  {
+    //this.data.changeData(product);
+   // this.router.navigate(['/productdetails']);
   }
 
 
