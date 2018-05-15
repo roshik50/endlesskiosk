@@ -14,7 +14,7 @@ export class CartService {
   addToCart(item: Cart) {
     let itemExist = false;
     this.cartItems.forEach(element => {
-      if (element.name === item.name) {
+      if (element.productId === item.productId) {
         console.log("element.name="+element.name+" item.name="+item.name);
         element.quantity++;
         itemExist = true;

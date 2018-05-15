@@ -50,24 +50,24 @@ export class HomeComponent implements OnInit {
       });
 
     }
-    else {
-      this.signOut();
-    }
+    // else {
+    //   this.signOut();
+    // }
 
   }
 
   slideConfig = { "slidesToShow": 4, "slidesToScroll": 3 };
 
-  signOut() {
-    console.log("logout");
-    this.authService.logout().then(() => {
-      this.tostr.success('', 'User Logout Successfully');
-      this.router.navigateByUrl('/index');
-    }) .catch(error => {
-        console.log('Something went wrong: ', error);
-        this.tostr.error(error, 'User Register Error !');
-      });
-  }
+  // signOut() {
+  //   console.log("logout");
+  //   this.authService.logout().then(() => {
+  //     this.tostr.success('', 'User Logout Successfully');
+  //     this.router.navigateByUrl('/index');
+  //   }) .catch(error => {
+  //       console.log('Something went wrong: ', error);
+  //       this.tostr.error(error, 'User Register Error !');
+  //     });
+  // }
 
 
   getSelectedCategory(categoryId) {
@@ -96,8 +96,8 @@ export class HomeComponent implements OnInit {
 
   selectedProduct(product)
   {
-    //this.data.changeData(product);
-   // this.router.navigate(['/productdetails']);
+    this.data.changeData(product);
+    this.router.navigate(['/productdetails']);
   }
 
 

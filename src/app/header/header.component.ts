@@ -3,6 +3,7 @@ import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CartService } from '../services/cart.service';
+import { WishlistService } from '../services/wishlist.service';
 
 @Component({
   selector: 'app-header',
@@ -12,10 +13,10 @@ import { CartService } from '../services/cart.service';
 export class HeaderComponent implements OnInit {
   message:string;
 
-  constructor(private authService: AuthService, private router: Router, private tostr: ToastrService,private cartService: CartService) { }
+  constructor(private authService: AuthService, private router: Router, private tostr: ToastrService,private cartService: CartService,private wishlistService:WishlistService) { }
   ngOnInit() {
    //this.data.currentMessage.subscribe(message => this.message = message)
-   //console.log("Current user data"+this.authService.currentUser().email);
+   console.log("Current user data"+this.wishlistService.getWishlistItems());
  
   }
 

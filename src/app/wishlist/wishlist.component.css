@@ -1,0 +1,148 @@
+.product-box {
+    padding: 0;
+    border: 1px solid #e7eaec;
+  }
+  .product-imitation-recommendations {
+    text-align: center;
+    width: auto !important;
+    height: 185px;
+    background-color: #fff !important;
+    color: #bebec3;
+    font-weight: 600;
+  }
+  .read-product-imitation {
+    width: 213px;
+    height: 185px;
+    display: inline-block;
+  }
+  /*************** Product Rating Stars *******************/
+
+.product-rating {
+    background-image:url("/images/sprite-rating-stars-5.png");
+    background-repeat:
+    no-repeat;
+    height:13px;
+    display:inline-block;
+    width:65px;
+    margin:7px 2px 0 0;
+    overflow:hidden;
+    text-indent:-9999px
+  }
+  
+  .product-rating.stars-0_25 {
+    background-position:0 0
+  }
+  
+  .product-rating.stars-0_5 {
+    background-position:0 -13px
+  }
+  
+  .product-rating.stars-0_75 {
+    background-position:0 -26px
+  }
+  
+  .product-rating.stars-1 {
+    background-position:0 -39px
+  }
+  
+  .product-rating.stars-1_25 {
+    background-position:0 -52px
+  }
+  
+  .product-rating.stars-1_5 {
+    background-position:0 -65px
+  }
+  
+  .product-rating.stars-1_75 { 
+    background-position:0 -78px
+  }
+  
+  .product-rating.stars-2 {
+    background-position:0 -91px
+  }
+  
+  .product-rating.stars-2_25 {
+    background-position:0 -104px
+  }
+  
+  .product-rating.stars-2_5 {
+    background-position:0 -117px
+  }
+  
+  .product-rating.stars-2_75 {
+    background-position:0 -130px
+  }
+  
+  .product-rating.stars-3 {
+    background-position:0 -143px
+  }
+  
+  .product-rating.stars-3_25 {
+    background-position:0 -156px
+  }
+  
+  .product-rating.stars-3_5 {
+    background-position:0 -169px
+  }
+  
+  .product-rating.stars-3_75 {
+    background-position:0 -182px
+  }
+  
+  .product-rating.stars-4 {
+    background-position:0 -195px
+  }
+  
+  .product-rating.stars-4_25 {
+    background-position:0 -208px
+  }
+  
+  .product-rating.stars-4_5 {
+    background-position:0 -221px
+  }
+  
+  .product-rating.stars-4_75 {
+    background-position:0 -234px
+  }
+  
+  .product-rating.stars-5 {
+    background-position:0 -247px
+  }
+  
+  .product-price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #3B8598;
+    /*background-color: #1ab394;*/
+    /*background-color: #1aa8b3;*/
+    /*background-color:rgba(255,0,0,0.1);*/
+    padding: 6px 12px;
+    position: absolute;
+    /*top: -32px;
+    top: 25px;*/
+    right: 0;
+  }
+  .product-ratings {
+    font-size: 14px;
+    font-weight: 600;
+    color:#3B8598;
+    /*background-color: #1ab394;*/
+    /*background-color: #1aa8b3;*/
+    /*background-color:rgba(255,0,0,0.1);*/
+    padding: 6px 12px;
+    position: absolute;
+    top: -32px;
+    left:0;
+  }
+  
+  
+  /********************************************** Clienteling End ********************************************************/
+  .product-name {
+    font-weight: 700;
+    color:#3B8598;
+    display: block;
+    margin: 2px 0 5px 0;
+    height:30px;
+    text-align:center; 
+    font-size:16px !important;
+  }
